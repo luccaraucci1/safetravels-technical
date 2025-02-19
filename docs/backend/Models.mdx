@@ -1,0 +1,1020 @@
+### 7.2 - Models
+
+Segue abaixo listados os modelos / variáveis / classes utilizados na plataforma:
+
+---
+
+**SafeTravels.Api.Controllers.RecoverPassword**
+
+- **email**: `string`
+
+---
+
+**SafeTravels.Api.Controllers.TokenFCM**
+
+- **registrationId**: `string`
+
+---
+
+**SafeTravels.Api.Models.Profile**
+
+- **name**: `string`
+- **photo**: `string`
+- **landline**: `SafeTravels.Api.Models.Landline`
+  - **ddi**: `string`
+  - **ddd**: `string`
+  - **phone**: `string`
+- **mobile**: `SafeTravels.Api.Models.Mobile`
+  - **ddi**: `string`
+  - **ddd**: `string`
+  - **phone**: `string`
+- **email**: `string`
+
+---
+
+**SafeTravels.Api.Models.Landline**
+
+- **ddi**: `string`
+- **ddd**: `string`
+- **phone**: `string`
+
+---
+
+**SafeTravels.Api.Models.Mobile**
+
+- **ddi**: `string`
+- **ddd**: `string`
+- **phone**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobRequest**
+
+- **id**: `string`
+- **pubDate**: `integer($int64)`
+- **dates**: `[SafeTravels.Api.Models.DateJob]`
+  - **date**: `integer($int64)`
+  - **routes**: `[SafeTravels.Api.Models.RouteJob]`
+    - **routeNumber**: `integer($int32)`
+    - **origin**: `string`
+    - **destiny**: `string`
+    - **startTime**: `integer($int64)`
+    - **numTravelers**: `integer($int32)`
+    - **jobTypes**: `[string]`
+    - **acceptJob**: `integer($int32)`
+    - **question**: `string`
+
+---
+
+**SafeTravels.Api.Models.DateJob**
+
+- **date**: `integer($int64)`
+- **routes**: `[SafeTravels.Api.Models.RouteJob]`
+  - **routeNumber**: `integer($int32)`
+  - **origin**: `string`
+  - **destiny**: `string`
+  - **startTime**: `integer($int64)`
+  - **numTravelers**: `integer($int32)`
+  - **jobTypes**: `[string]`
+  - **acceptJob**: `integer($int32)`
+  - **question**: `string`
+
+---
+
+**SafeTravels.Api.Models.RouteJob**
+
+- **routeNumber**: `integer($int32)`
+- **origin**: `string`
+- **destiny**: `string`
+- **startTime**: `integer($int64)`
+- **numTravelers**: `integer($int32)`
+- **jobTypes**: `[string]`
+- **acceptJob**: `integer($int32)`
+- **question**: `string`
+
+---
+
+**SafeTravels.Domain.Models.Partner**
+
+- **id**: `integer($int32)`
+- **name**: `string`
+- **documentId**: `integer($int32)`
+- **pipefyId**: `integer($int32)`
+- **document**: `SafeTravels.Domain.Models.Document`
+  - **id**: `integer($int32)`
+  - **description**: `string`
+  - **typeDocument**: `integer($int32)`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+- **addressId**: `integer($int32)`
+- **address**: `SafeTravels.Domain.Models.Address`
+  - **id**: `integer($int32)`
+  - **state**: `string`
+  - **city**: `string`
+  - **neighborhood**: `string`
+  - **addressText**: `string`
+  - **number**: `string`
+  - **complement**: `string`
+  - **reference**: `string`
+  - **cep**: `string`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+  - **countryId**: `integer($int32)`
+  - **country**: `SafeTravels.Domain.Models.Country`
+    - **id**: `integer($int32)`
+    - **description**: `string`
+    - **acronym**: `string`
+    - **callingCode**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+- **status**: `boolean`
+- **mainContact**: `string`
+- **financialContact**: `string`
+- **logo**: `System.Web.HttpPostedFileBase`
+  - **contentLength**: `integer($int32)` _(readOnly)_
+  - **contentType**: `string` _(readOnly)_
+  - **fileName**: `string` _(readOnly)_
+  - **inputStream**: `System.IO.Stream`
+    - **canRead**: `boolean` _(readOnly)_
+    - **canSeek**: `boolean` _(readOnly)_
+    - **canTimeout**: `boolean` _(readOnly)_
+    - **canWrite**: `boolean` _(readOnly)_
+    - **length**: `integer($int64)` _(readOnly)_
+    - **position**: `integer($int64)`
+    - **readTimeout**: `integer($int32)`
+    - **writeTimeout**: `integer($int32)`
+- **logoFileName**: `string`
+- **website**: `string`
+
+---
+
+**SafeTravels.Domain.Models.Document**
+
+- **id**: `integer($int32)`
+- **description**: `string`
+- **typeDocument**: `integer($int32)`
+- **person**: `integer($int32)`
+- **typePerson**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+
+---
+
+**SafeTravels.Domain.Models.Address**
+
+- **id**: `integer($int32)`
+- **state**: `string`
+- **city**: `string`
+- **neighborhood**: `string`
+- **addressText**: `string`
+- **number**: `string`
+- **complement**: `string`
+- **reference**: `string`
+- **cep**: `string`
+- **person**: `integer($int32)`
+- **typePerson**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+- **countryId**: `integer($int32)`
+- **country**: `SafeTravels.Domain.Models.Country`
+  - **id**: `integer($int32)`
+  - **description**: `string`
+  - **acronym**: `string`
+  - **callingCode**: `integer($int32)`
+
+---
+
+**System.Web.HttpPostedFileBase**
+
+- **contentLength**: `integer($int32)` _(readOnly)_
+- **contentType**: `string` _(readOnly)_
+- **fileName**: `string` _(readOnly)_
+- **inputStream**: `System.IO.Stream`
+  - **canRead**: `boolean` _(readOnly)_
+  - **canSeek**: `boolean` _(readOnly)_
+  - **canTimeout**: `boolean` _(readOnly)_
+  - **canWrite**: `boolean` _(readOnly)_
+  - **length**: `integer($int64)` _(readOnly)_
+  - **position**: `integer($int64)`
+  - **readTimeout**: `integer($int32)`
+  - **writeTimeout**: `integer($int32)`
+
+---
+
+**SafeTravels.Domain.Models.Country**
+
+- **id**: `integer($int32)`
+- **description**: `string`
+- **acronym**: `string`
+- **callingCode**: `integer($int32)`
+
+---
+
+**System.IO.Stream**
+
+- **canRead**: `boolean` _(readOnly)_
+- **canSeek**: `boolean` _(readOnly)_
+- **canTimeout**: `boolean` _(readOnly)_
+- **canWrite**: `boolean` _(readOnly)_
+- **length**: `integer($int64)` _(readOnly)_
+- **position**: `integer($int64)`
+- **readTimeout**: `integer($int32)`
+- **writeTimeout**: `integer($int32)`
+
+---
+
+**SafeTravels.Domain.Models.Customer**
+
+- **id**: `integer($int32)`
+- **name**: `string`
+- **documentId**: `integer($int32)`
+- **document**: `SafeTravels.Domain.Models.Document`
+  - **id**: `integer($int32)`
+  - **description**: `string`
+  - **typeDocument**: `integer($int32)`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+- **addressId**: `integer($int32)`
+- **address**: `SafeTravels.Domain.Models.Address`
+  - **id**: `integer($int32)`
+  - **state**: `string`
+  - **city**: `string`
+  - **neighborhood**: `string`
+  - **addressText**: `string`
+  - **number**: `string`
+  - **complement**: `string`
+  - **reference**: `string`
+  - **cep**: `string`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+  - **countryId**: `integer($int32)`
+  - **country**: `SafeTravels.Domain.Models.Country`
+    - **id**: `integer($int32)`
+    - **description**: `string`
+    - **acronym**: `string`
+    - **callingCode**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+- **status**: `boolean`
+- **mainContact**: `string`
+- **financialContact**: `string`
+- **logo**: `string`
+- **partnerId**: `integer($int32)`
+- **partner**: `SafeTravels.Domain.Models.Partner`
+  - **id**: `integer($int32)`
+  - **name**: `string`
+  - **documentId**: `integer($int32)`
+  - **pipefyId**: `integer($int32)`
+  - **document**: `SafeTravels.Domain.Models.Document`
+    - **id**: `integer($int32)`
+    - **description**: `string`
+    - **typeDocument**: `integer($int32)`
+    - **person**: `integer($int32)`
+    - **typePerson**: `integer($int32)`
+    - **registerDate**: `string($date-time)`
+  - **addressId**: `integer($int32)`
+  - **address**: `SafeTravels.Domain.Models.Address`
+    - **id**: `integer($int32)`
+    - **state**: `string`
+    - **city**: `string`
+    - **neighborhood**: `string`
+    - **addressText**: `string`
+    - **number**: `string`
+    - **complement**: `string`
+    - **reference**: `string`
+    - **cep**: `string`
+    - **person**: `integer($int32)`
+    - **typePerson**: `integer($int32)`
+    - **registerDate**: `string($date-time)`
+    - **countryId**: `integer($int32)`
+    - **country**: `SafeTravels.Domain.Models.Country`
+      - **id**: `integer($int32)`
+      - **description**: `string`
+      - **acronym**: `string`
+      - **callingCode**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+  - **status**: `boolean`
+  - **mainContact**: `string`
+  - **financialContact**: `string`
+  - **logo**: `System.Web.HttpPostedFileBase`
+    - **contentLength**: `integer($int32)` _(readOnly)_
+    - **contentType**: `string` _(readOnly)_
+    - **fileName**: `string` _(readOnly)_
+    - **inputStream**: `System.IO.Stream`
+      - **canRead**: `boolean` _(readOnly)_
+      - **canSeek**: `boolean` _(readOnly)_
+      - **canTimeout**: `boolean` _(readOnly)_
+      - **canWrite**: `boolean` _(readOnly)_
+      - **length**: `integer($int64)` _(readOnly)_
+      - **position**: `integer($int64)`
+      - **readTimeout**: `integer($int32)`
+      - **writeTimeout**: `integer($int32)`
+  - **logoFileName**: `string`
+  - **website**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobOperatorArrivalDTO**
+
+- **jobLocation**: `SafeTravels.Api.Models.JobLocation`
+  - **route_Id**: `integer($int32)`
+  - **latitude**: `number($double)`
+  - **longitude**: `number($double)`
+- **jobOperatorArrival**: `SafeTravels.Api.Models.JobOperatorArrival`
+  - **status**: `integer($int32)` _(Enum: Array [ 13 ])_
+  - **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobOperatorArrival**
+
+- **status**: `integer($int32)` _(Enum: Array [ 13 ])_
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobTravelerArrival**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **traveler_Answer**: `boolean`
+- **traveler_Aware**: `boolean`
+- **reason**: `string`
+- **questionId**: `integer($int32)`
+- **answer**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobNewTraveler**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Name**: `string`
+- **traveler_Phone**: `string`
+- **traveler_Description**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobStart**
+
+- **route_Id**: `integer($int32)`
+
+---
+
+**SafeTravels.Api.Models.JobLocationStatusDTO**
+
+- **jobLocation**: `SafeTravels.Api.Models.JobLocation`
+  - **route_Id**: `integer($int32)`
+  - **latitude**: `number($double)`
+  - **longitude**: `number($double)`
+- **jobLocationStatus**: `SafeTravels.Api.Models.JobLocationStatus`
+  - **isPaused**: `boolean`
+  - **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobLocationStatus**
+
+- **isPaused**: `boolean`
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.TravelerDisembarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+- **isEndDay**: `boolean`
+- **isFinal**: `boolean`
+- **signature**: `string`
+- **noSignatureReason**: `string`
+- **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.TravelerEmbarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.AditionalTravelerDisembarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **aditionalTraveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+- **isEndDay**: `boolean`
+- **isFinal**: `boolean`
+- **signature**: `string`
+- **noSignatureReason**: `string`
+- **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.AditionalTravelerEmbarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **aditionalTraveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobDeliverTravelerDTO**
+
+- **jobLocation**: `SafeTravels.Api.Models.JobLocation`
+  - **route_Id**: `integer($int32)`
+  - **latitude**: `number($double)`
+  - **longitude**: `number($double)`
+- **jobDeliverTraveler**: `SafeTravels.Api.Models.JobDeliverTraveler`
+  - **traveler_Id**: `integer($int32)`
+  - **signature**: `string`
+  - **noSignatureReason**: `string`
+  - **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobDeliverTraveler**
+
+- **traveler_Id**: `integer($int32)`
+- **signature**: `string`
+- **noSignatureReason**: `string`
+- **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.Code**
+
+- **qrCode**: `string($uuid)` _(example: 00000000-0000-0000-0000-000000000000)_
+
+---
+
+**SafeTravels.Api.Models.OptionalValidation**
+
+- **routeId**: `integer($int32)`
+- **travelerId**: `integer($int32)`
+- **codeAnswer**: `string`
+
+---
+
+**SafeTravels.Domain.Models.ResendConfirmationViewModel**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **tipo_Envio**: `integer($int32)` _(Enum: Array [ 3 ])_
+
+---
+
+**Geocoding.Google.GoogleAddress**
+
+- **type**: `integer($int32)` _(readOnly, Enum: Array [ 32 ])_
+- **locationType**: `integer($int32)` _(readOnly, Enum: [ 0, 1, 2, 3, 4 ])_
+- **components**: `[Ge### 7.2 - Models
+
+Segue abaixo listados os modelos / variáveis / classes utilizados na plataforma:
+
+---
+
+**SafeTravels.Api.Controllers.RecoverPassword**
+
+- **email**: `string`
+
+---
+
+**SafeTravels.Api.Controllers.TokenFCM**
+
+- **registrationId**: `string`
+
+---
+
+**SafeTravels.Api.Models.Profile**
+
+- **name**: `string`
+- **photo**: `string`
+- **landline**: `SafeTravels.Api.Models.Lline`
+  - **ddi**: `string`
+  - **ddd**: `string`
+  - **phone**: `string`
+- **mobile**: `SafeTravels.Api.Models.Mobile`
+  - **ddi**: `string`
+  - **ddd**: `string`
+  - **phone**: `string`
+- **email**: `string`
+
+---
+
+**SafeTravels.Api.Models.Landline**
+
+- **ddi**: `string`
+- **ddd**: `string`
+- **phone**: `string`
+
+---
+
+**SafeTravels.Api.Models.Mobile**
+
+- **ddi**: `string`
+- **ddd**: `string`
+- **phone**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobRequest**
+
+- **id**: `string`
+- **pubDate**: `integer($int64)`
+- **dates**: `[SafeTravels.Api.Models.DateJob]`
+  - **date**: `integer($int64)`
+  - **routes**: `[SafeTravels.Api.Models.RouteJob]`
+    - **routeNumber**: `integer($int32)`
+    - **origin**: `string`
+    - **destiny**: `string`
+    - **startTime**: `integer($int64)`
+    - **numTravelers**: `integer($int32)`
+    - **jobTypes**: `[string]`
+    - **acceptJob**: `integer($int32)`
+    - **question**: `string`
+
+---
+
+**SafeTravels.Api.Models.DateJob**
+
+- **date**: `integer($int64)`
+- **routes**: `[SafeTravels.Api.Models.RouteJob]`
+  - **routeNumber**: `integer($int32)`
+  - **origin**: `string`
+  - **destiny**: `string`
+  - **startTime**: `integer($int64)`
+  - **numTravelers**: `integer($int32)`
+  - **jobTypes**: `[string]`
+  - **acceptJob**: `integer($int32)`
+  - **question**: `string`
+
+---
+
+**SafeTravels.Api.Models.RouteJob**
+
+- **routeNumber**: `integer($int32)`
+- **origin**: `string`
+- **destiny**: `string`
+- **startTime**: `integer($int64)`
+- **numTravelers**: `integer($int32)`
+- **jobTypes**: `[string]`
+- **acceptJob**: `integer($int32)`
+- **question**: `string`
+
+---
+
+**SafeTravels.Domain.Models.Partner**
+
+- **id**: `integer($int32)`
+- **name**: `string`
+- **documentId**: `integer($int32)`
+- **pipefyId**: `integer($int32)`
+- **document**: `SafeTravels.Domain.Models.Document`
+  - **id**: `integer($int32)`
+  - **description**: `string`
+  - **typeDocument**: `integer($int32)`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+- **addressId**: `integer($int32)`
+- **address**: `SafeTravels.Domain.Models.Address`
+  - **id**: `integer($int32)`
+  - **state**: `string`
+  - **city**: `string`
+  - **neighborhood**: `string`
+  - **addressText**: `string`
+  - **number**: `string`
+  - **complement**: `string`
+  - **reference**: `string`
+  - **cep**: `string`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+  - **countryId**: `integer($int32)`
+  - **country**: `SafeTravels.Domain.Models.Country`
+    - **id**: `integer($int32)`
+    - **description**: `string`
+    - **acronym**: `string`
+    - **callingCode**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+- **status**: `boolean`
+- **mainContact**: `string`
+- **financialContact**: `string`
+- **logo**: `System.Web.HttpPostedFileBase`
+  - **contentLength**: `integer($int32)` _(readOnly)_
+  - **contentType**: `string` _(readOnly)_
+  - **fileName**: `string` _(readOnly)_
+  - **inputStream**: `System.IO.Stream`
+    - **canRead**: `boolean` _(readOnly)_
+    - **canSeek**: `boolean` _(readOnly)_
+    - **canTimeout**: `boolean` _(readOnly)_
+    - **canWrite**: `boolean` _(readOnly)_
+    - **length**: `integer($int64)` _(readOnly)_
+    - **position**: `integer($int64)`
+    - **readTimeout**: `integer($int32)`
+    - **writeTimeout**: `integer($int32)`
+- **logoFileName**: `string`
+- **website**: `string`
+
+---
+
+**SafeTravels.Domain.Models.Document**
+
+- **id**: `integer($int32)`
+- **description**: `string`
+- **typeDocument**: `integer($int32)`
+- **person**: `integer($int32)`
+- **typePerson**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+
+---
+
+**SafeTravels.Domain.Models.Address**
+
+- **id**: `integer($int32)`
+- **state**: `string`
+- **city**: `string`
+- **neighborhood**: `string`
+- **addressText**: `string`
+- **number**: `string`
+- **complement**: `string`
+- **reference**: `string`
+- **cep**: `string`
+- **person**: `integer($int32)`
+- **typePerson**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+- **countryId**: `integer($int32)`
+- **country**: `SafeTravels.Domain.Models.Country`
+  - **id**: `integer($int32)`
+  - **description**: `string`
+  - **acronym**: `string`
+  - **callingCode**: `integer($int32)`
+
+---
+
+**System.Web.HttpPostedFileBase**
+
+- **contentLength**: `integer($int32)` _(readOnly)_
+- **contentType**: `string` _(readOnly)_
+- **fileName**: `string` _(readOnly)_
+- **inputStream**: `System.IO.Stream`
+  - **canRead**: `boolean` _(readOnly)_
+  - **canSeek**: `boolean` _(readOnly)_
+  - **canTimeout**: `boolean` _(readOnly)_
+  - **canWrite**: `boolean` _(readOnly)_
+  - **length**: `integer($int64)` _(readOnly)_
+  - **position**: `integer($int64)`
+  - **readTimeout**: `integer($int32)`
+  - **writeTimeout**: `integer($int32)`
+
+---
+
+**SafeTravels.Domain.Models.Country**
+
+- **id**: `integer($int32)`
+- **description**: `string`
+- **acronym**: `string`
+- **callingCode**: `integer($int32)`
+
+---
+
+**System.IO.Stream**
+
+- **canRead**: `boolean` _(readOnly)_
+- **canSeek**: `boolean` _(readOnly)_
+- **canTimeout**: `boolean` _(readOnly)_
+- **canWrite**: `boolean` _(readOnly)_
+- **length**: `integer($int64)` _(readOnly)_
+- **position**: `integer($int64)`
+- **readTimeout**: `integer($int32)`
+- **writeTimeout**: `integer($int32)`
+
+---
+
+**SafeTravels.Domain.Models.Customer**
+
+- **id**: `integer($int32)`
+- **name**: `string`
+- **documentId**: `integer($int32)`
+- **document**: `SafeTravels.Domain.Models.Document`
+  - **id**: `integer($int32)`
+  - **description**: `string`
+  - **typeDocument**: `integer($int32)`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+- **addressId**: `integer($int32)`
+- **address**: `SafeTravels.Domain.Models.Address`
+  - **id**: `integer($int32)`
+  - **state**: `string`
+  - **city**: `string`
+  - **neighborhood**: `string`
+  - **addressText**: `string`
+  - **number**: `string`
+  - **complement**: `string`
+  - **reference**: `string`
+  - **cep**: `string`
+  - **person**: `integer($int32)`
+  - **typePerson**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+  - **countryId**: `integer($int32)`
+  - **country**: `SafeTravels.Domain.Models.Country`
+    - **id**: `integer($int32)`
+    - **description**: `string`
+    - **acronym**: `string`
+    - **callingCode**: `integer($int32)`
+- **registerDate**: `string($date-time)`
+- **status**: `boolean`
+- **mainContact**: `string`
+- **financialContact**: `string`
+- **logo**: `string`
+- **partnerId**: `integer($int32)`
+- **partner**: `SafeTravels.Domain.Models.Partner`
+  - **id**: `integer($int32)`
+  - **name**: `string`
+  - **documentId**: `integer($int32)`
+  - **pipefyId**: `integer($int32)`
+  - **document**: `SafeTravels.Domain.Models.Document`
+    - **id**: `integer($int32)`
+    - **description**: `string`
+    - **typeDocument**: `integer($int32)`
+    - **person**: `integer($int32)`
+    - **typePerson**: `integer($int32)`
+    - **registerDate**: `string($date-time)`
+  - **addressId**: `integer($int32)`
+  - **address**: `SafeTravels.Domain.Models.Address`
+    - **id**: `integer($int32)`
+    - **state**: `string`
+    - **city**: `string`
+    - **neighborhood**: `string`
+    - **addressText**: `string`
+    - **number**: `string`
+    - **complement**: `string`
+    - **reference**: `string`
+    - **cep**: `string`
+    - **person**: `integer($int32)`
+    - **typePerson**: `integer($int32)`
+    - **registerDate**: `string($date-time)`
+    - **countryId**: `integer($int32)`
+    - **country**: `SafeTravels.Domain.Models.Country`
+      - **id**: `integer($int32)`
+      - **description**: `string`
+      - **acronym**: `string`
+      - **callingCode**: `integer($int32)`
+  - **registerDate**: `string($date-time)`
+  - **status**: `boolean`
+  - **mainContact**: `string`
+  - **financialContact**: `string`
+  - **logo**: `System.Web.HttpPostedFileBase`
+    - **contentLength**: `integer($int32)` _(readOnly)_
+    - **contentType**: `string` _(readOnly)_
+    - **fileName**: `string` _(readOnly)_
+    - **inputStream**: `System.IO.Stream`
+      - **canRead**: `boolean` _(readOnly)_
+      - **canSeek**: `boolean` _(readOnly)_
+      - **canTimeout**: `boolean` _(readOnly)_
+      - **canWrite**: `boolean` _(readOnly)_
+      - **length**: `integer($int64)` _(readOnly)_
+      - **position**: `integer($int64)`
+      - **readTimeout**: `integer($int32)`
+      - **writeTimeout**: `integer($int32)`
+  - **logoFileName**: `string`
+  - **website**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobOperatorArrivalDTO**
+
+- **jobLocation**: `SafeTravels.Api.Models.JobLocation`
+  - **route_Id**: `integer($int32)`
+  - **latitude**: `number($double)`
+  - **longitude**: `number($double)`
+- **jobOperatorArrival**: `SafeTravels.Api.Models.JobOperatorArrival`
+  - **status**: `integer($int32)` _(Enum: Array [ 13 ])_
+  - **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobOperatorArrival**
+
+- **status**: `integer($int32)` _(Enum: Array [ 13 ])_
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobTravelerArrival**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **traveler_Answer**: `boolean`
+- **traveler_Aware**: `boolean`
+- **reason**: `string`
+- **questionId**: `integer($int32)`
+- **answer**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobNewTraveler**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Name**: `string`
+- **traveler_Phone**: `string`
+- **traveler_Description**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobStart**
+
+- **route_Id**: `integer($int32)`
+
+---
+
+**SafeTravels.Api.Models.JobLocationStatusDTO**
+
+- **jobLocation**: `SafeTravels.Api.Models.JobLocation`
+  - **route_Id**: `integer($int32)`
+  - **latitude**: `number($double)`
+  - **longitude**: `number($double)`
+- **jobLocationStatus**: `SafeTravels.Api.Models.JobLocationStatus`
+  - **isPaused**: `boolean`
+  - **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobLocationStatus**
+
+- **isPaused**: `boolean`
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.TravelerDisembarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+- **isEndDay**: `boolean`
+- **isFinal**: `boolean`
+- **signature**: `string`
+- **noSignatureReason**: `string`
+- **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.TravelerEmbarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.AditionalTravelerDisembarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **aditionalTraveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+- **isEndDay**: `boolean`
+- **isFinal**: `boolean`
+- **signature**: `string`
+- **noSignatureReason**: `string`
+- **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.AditionalTravelerEmbarkDTO**
+
+- **route_Id**: `integer($int32)`
+- **aditionalTraveler_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobDeliverTravelerDTO**
+
+- **jobLocation**: `SafeTravels.Api.Models.JobLocation`
+  - **route_Id**: `integer($int32)`
+  - **latitude**: `number($double)`
+  - **longitude**: `number($double)`
+- **jobDeliverTraveler**: `SafeTravels.Api.Models.JobDeliverTraveler`
+  - **traveler_Id**: `integer($int32)`
+  - **signature**: `string`
+  - **noSignatureReason**: `string`
+  - **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.JobDeliverTraveler**
+
+- **traveler_Id**: `integer($int32)`
+- **signature**: `string`
+- **noSignatureReason**: `string`
+- **checksum**: `string`
+
+---
+
+**SafeTravels.Api.Models.Code**
+
+- **qrCode**: `string($uuid)` _(example: 00000000-0000-0000-0000-000000000000)_
+
+---
+
+**SafeTravels.Api.Models.OptionalValidation**
+
+- **routeId**: `integer($int32)`
+- **travelerId**: `integer($int32)`
+- **codeAnswer**: `string`
+
+---
+
+**SafeTravels.Domain.Models.ResendConfirmationViewModel**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+- **tipo_Envio**: `integer($int32)` _(Enum: Array [ 3 ])_
+
+---
+
+**Geocoding.Google.GoogleAddress**
+
+- **type**: `integer($int32)` _(readOnly, Enum: Array [ 32 ])_
+- **locationType**: `integer($int32)` _(readOnly, Enum: [ 0, 1, 2, 3, 4 ])_
+- **components**: `[Geocoding.Google.GoogleAddressComponent]`
+  - **types**: `[integer($int32)]` _(readOnly, Enum: Array [ 32 ])_
+  - **longName**: `string` _(readOnly)_
+  - **shortName**: `string` _(readOnly)_
+- **isPartialMatch**: `boolean` _(readOnly)_
+- **viewport**: `Geocoding.Google.GoogleViewport`
+  - **northeast**: `Geocoding.Location`
+    - **lat**: `number($double)`
+    - **lng**: `number($double)`
+  - **southwest**: `Geocoding.Location`
+    - **lat**: `number($double)`
+    - **lng**: `number($double)`
+- **placeId**: `string` _(readOnly)_
+- **formattedAddress**: `string`
+- **coordinates**: `Geocoding.Location`
+  - **lat**: `number($double)`
+  - **lng**: `number($double)`
+- **provider**: `string` _(readOnly)_
+
+---
+
+**Geocoding.Google.GoogleAddressComponent**
+
+- **types**: `[integer($int32)]` _(readOnly, Enum: Array [ 32 ])_
+- **longName**: `string` _(readOnly)_
+- **shortName**: `string` _(readOnly)_
+
+---
+
+**Geocoding.Google.GoogleViewport**
+
+- **northeast**: `Geocoding.Location`
+  - **lat**: `number($double)`
+  - **lng**: `number($double)`
+- **southwest**: `Geocoding.Location`
+  - **lat**: `number($double)`
+  - **lng**: `number($double)`
+
+---
+
+**Geocoding.Location**
+
+- **lat**: `number($double)`
+- **lng**: `number($double)`
+
+---
+
+**SafeTravels.Api.Models.SendValidationDTO**
+
+- **route_Id**: `integer($int32)`
+- **traveler_Id**: `integer($int32)`
+
+---
+
+**SafeTravels.Api.Models.CancelJobDTO**
+
+- **route_Id**: `integer($int32)`
+- **latitude**: `number($double)`
+- **longitude**: `number($double)`
+- **reason**: `string`
