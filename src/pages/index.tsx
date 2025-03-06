@@ -23,7 +23,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/Introdução"
+            to="/docs/Introducao"
           >
             Introdução ao SafeTravels - 5min ⏱️
           </Link>
